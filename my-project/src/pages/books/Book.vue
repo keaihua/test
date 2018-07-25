@@ -4,14 +4,9 @@
     </div>
 </template>
 <script>
-    import {get} from '../../util';
-    export default {
-        async created() {
-            const a = await get(demo)
-            console.log(a)
-        }
-    }
+export default {
+  created () {}
+}
 </script>
 <style>
-
 </style>
