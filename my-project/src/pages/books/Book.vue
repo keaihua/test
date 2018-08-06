@@ -1,11 +1,31 @@
 <template>
     <div>
-        图书列表页 搜也
+        <Card v-for='book in books' :key='book.id' :book='book'>
+            {{book.title}}
+        </Card>
     </div>
 </template>
 <script>
+import { get } from '@/util'
+import Card from '@/components/Card'
 export default {
-  created () {}
+    components: {
+      Card  
+    },
+    data(){
+        return {
+            books: []
+        }
+    },
+    methods: {
+        async getList () {
+            const book = await get('/weapp/booklist')
+            this.books = book.data.list
+        }
+    },
+    mounted() {
+        this.getList()
+    }
 }
 </script>
 <style>
