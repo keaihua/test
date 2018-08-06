@@ -11,7 +11,7 @@
 </template>
 <script>
 import YearProgress from '@/components/YearProgress/YearProgress'
-import { showSuccess, post } from '@/util'
+import { showSuccess, post, showModal } from '@/util'
 import qcloud from 'wafer2-client-sdk'
 import config from '@/config'
 
@@ -41,10 +41,10 @@ export default {
     async addBook (isbn) {
         const res = await post('/weapp/addbook', {
             isbn,
-            openid: this.userinfo.openid
+            openid: this.userinfo.openId
         })
         if (res.code == 0 && res.data.title){
-            console.log('添加成功')
+            showModal('添加成功', `${res.data.title}添加成功`)
         }
     },
     login () {
