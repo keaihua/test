@@ -11,4 +11,8 @@ create table books(
     rate float,
     tags varchar(100),
     author varchar(100)
+<<<<<<< HEAD
 );
+=======
+)
+>>>>>>> 68ad6905fcaaaad74606e8613b53f96b25570334
