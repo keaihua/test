@@ -5,7 +5,7 @@ const app = new Vue(Book)
 app.$mount()
 
 export default {
-   config:{
+  config: {
     enablePullDownRefresh: true
-   }
+  }
 }

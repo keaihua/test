@@ -13,6 +13,23 @@ export default {
 }
 </script>
 <style>
+.text-footer{
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.text-primary{
+  color: #EA5149;
+}
+.right{
+  float: right;
+}
+.page-title{
+  padding-left: 20px;
+  background: #eee;
+  line-height: 40px;
+  font-size: 14px;
+}
 .btn{
   color: #fff;
   background: #EA5A49;

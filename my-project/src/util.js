@@ -1,7 +1,7 @@
 // 工具库
 import config from './config'
 
-//http get工具函数  获取数据
+// http get工具函数  获取数据
 export function get (url, data) {
   return request(url, 'GET', data)
 }
@@ -20,7 +20,7 @@ function request (url, method, data) {
         if (res.data.code === 0) {
           resolve(res.data)
         } else {
-          showModal('失败',`${res.data.data.msg}`)
+          showModal('失败', `${res.data.data.msg}`)
           reject(res.data)
         }
       }

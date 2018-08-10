@@ -25,21 +25,29 @@
             {{info.price}}
             </div>   
         </div>
+        <div class="tags">
+            <div v-for="tag in info.tags" :key="tag" class="badge"  >
+                {{tag}}
+            </div>
+        </div>
+        <div class="summary">
+           <p v-for="(sum,i) in info.summary" :key="i">{{sum}}</p>
+        </div>
     </div>
 </template>
 <script>
-import Rate from "@/components/Rate"
+import Rate from '@/components/Rate'
 export default {
-  props: ["info"],
+  props: ['info'],
   computed: {
-      userinfo(){
-          return this.info.user_info || {}
-      }
+    userinfo () {
+      return this.info.user_info || {}
+    }
   },
   components: {
-      Rate
+    Rate
   }
-};
+}
 </script>
 <style lang="scss">
 .bookinfo {
@@ -87,6 +95,22 @@ export default {
       }
       .text-primary{
           color: #EA5149;
+      }
+  }
+  .badge{
+      display: inline-block;
+      margin: 5px;
+      padding: 5px;
+      border: 1px #EA5149 solid;
+      border-radius: 10px;
+      color: #EA5149;
+  }
+  .summary{
+      margin-top: 10px;
+      padding: 10px;
+      p{
+          text-indent: 2em;
+          font-size: 14px;
       }
   }
 }

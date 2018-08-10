@@ -8,16 +8,16 @@
 </template>
 <script>
     export default {
-        props: {
-            value: {
-                type: [Number, String], default: '0'
-            }
-        },
-        computed: {
-            style(){
-                return `width:${this.value * 10}%`
-            }
+      props: {
+        value: {
+          type: [Number, String], default: '0'
         }
+      },
+      computed: {
+        style () {
+          return `width:${this.value * 10}%`
+        }
+      }
     }
 </script>
 <style lang="scss">

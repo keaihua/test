@@ -32,20 +32,20 @@ export default {
       wx.scanCode({
         onlyFromCamera: true,
         success: res => {
-            if (res.result) {
-                this.addBook(res.result)
-            }
+          if (res.result) {
+            this.addBook(res.result)
+          }
         }
       })
     },
     async addBook (isbn) {
-        const res = await post('/weapp/addbook', {
-            isbn,
-            openid: this.userinfo.openId
-        })
-        if (res.code == 0 && res.data.title){
-            showModal('添加成功', `${res.data.title}添加成功`)
-        }
+      const res = await post('/weapp/addbook', {
+        isbn,
+        openid: this.userinfo.openId
+      })
+      if (res.code === 0 && res.data.title) {
+        showModal('添加成功', `${res.data.title}添加成功`)
+      }
     },
     login () {
       var user = wx.getStorageSync('userinfo')
@@ -72,12 +72,12 @@ export default {
     }
   },
   created () {
-     this.userinfo = wx.getStorageSync("userinfo");
+    this.userinfo = wx.getStorageSync('userinfo')
   },
   onshow () {
     if (wx.getStorageSync('userinfo')) {
-        this.userinfo = wx.getStorageSync('userinfo')
-        console.log(this.userinfo)
+      this.userinfo = wx.getStorageSync('userinfo')
+      console.log(this.userinfo)
     }
   }
 }
