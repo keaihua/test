@@ -5,7 +5,7 @@
             {{book.title}}
         </Card>
         <p class="text-footer" v-if="!more">
-            娌℃湁鏇村鏁版嵁
+            没有更多数据
         </p>
     </div>
 </template>
