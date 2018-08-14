@@ -14,7 +14,7 @@ const CONF = {
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: '',
+    appId: 'wx6d718011b336c8a4',
 
     // 微信小程序 App Secret
     appSecret: '',

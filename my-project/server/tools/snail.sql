@@ -23,7 +23,7 @@ CREATE TABLE `comments` (
   `openid` varchar(100) NOT NULL,
   `bookid` varchar(100) NOT NULL,
   `comment` varchar(200) NOT NULL,
-  `phone` varchar(20) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
   `location` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;

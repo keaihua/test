@@ -3,7 +3,10 @@
         <div class="page-title" v-if="comments.length">
             评论
         </div>
-        <div class="comment" v-for="comment in comments" :key="comment.id">
+        <div class="comment" 
+                v-for="comment in comments" 
+                :key="comment.id" 
+                @click="handleClick(comment)">
             <div class="user">
                 <div class="inline">
                     <img :src="comment.image" mode="aspectFit" class="avatar">
@@ -26,7 +29,17 @@
 </template>
 <script>
 export default {
-  props: ['comments']
+  props: ['comments','type'],
+  methods: {
+      handleClick(comment){
+          console.log(this.type)
+          if (this.type === 'user'){
+              wx.navigateTo({
+                  url: '/pages/detail/main?id=' + comment.bookid
+              })
+          }
+      }
+  }
 }
 </script>
 <style lang="scss">
@@ -37,7 +50,7 @@ export default {
         border-bottom: 1px solid #e3e3e3;
     }
     .comment{
-        background: #eee;
+        background: #fff;
         margin-bottom: 10px;
         padding: 5px 20px;
         .user{

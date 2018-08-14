@@ -79,8 +79,7 @@ export default {
             wx.request({
               url,
               data: {
-                latitude: `${geo.latitude}`,
-                longitude: `${geo.longitude}`,
+                location: `${geo.latitude}, ${geo.longitude}`,
                 output: 'json',
                 ak
               },
@@ -103,6 +102,7 @@ export default {
       if (e.target.value) {
         const phoneInfo = wx.getSystemInfoSync()
         this.phone = phoneInfo.model
+        console.log(phoneInfo)
       } else {
         this.phone = ''
       }
