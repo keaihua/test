@@ -19,7 +19,7 @@ module.exports = async (ctx) => {
         ctx.state = {
             code: -1,
             data: {
-                msg: '评论失败' + error.message
+                msg: '评论失败' + error.sqlMessage
             }
         }
     }

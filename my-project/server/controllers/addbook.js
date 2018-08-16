@@ -17,7 +17,7 @@ module.exports = async (ctx) => {
             return
         }
         let url = 'https://api.douban.com/v2/book/isbn/' + isbn
-        const bookinfo = await getJSON(url)
+        let bookinfo = await getJSON(url)
         const rate = bookinfo.rating.average
         const { title, image, alt, publisher, summary, price } = bookinfo
         const tags = bookinfo.tags.map(v => {
@@ -33,9 +33,11 @@ module.exports = async (ctx) => {
                 msg: 'success'
             }
         } catch (error) {
-            ctx.state.data = {
+            ctx.state = {
                 code: -1,
-                msg: '新增失败' + error.sqlMessage
+                data:{
+                    msg: '新增失败' + error.sqlMessage
+                }
             }
         }
     }

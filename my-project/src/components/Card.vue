@@ -53,6 +53,9 @@ export default {
         urls: [this.book.image]
       })
     }
+  },
+  mounted () {
+    console.log(this.book)
   }
 }
 </script>

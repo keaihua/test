@@ -42,7 +42,7 @@ export default {
         this.books = book.data.list;
         wx.stopPullDownRefresh();
       } else {
-        this.books = this.books.concat(book.list);
+        this.books = this.books.concat(book.data.list);
       }
       wx.hideNavigationBarLoading();
     },

@@ -45,6 +45,8 @@ export default {
       })
       if (res.code === 0 && res.data.title) {
         showModal('添加成功', `${res.data.title}添加成功`)
+      } else {
+        showModal('添加失败', `${res.data.msg}`)
       }
     },
     login () {

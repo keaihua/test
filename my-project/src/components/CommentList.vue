@@ -17,7 +17,7 @@
                     <span class="text-primary">
                         --
                     </span>
-                    {{comment.phone || '未知型号'}}   
+                    <div class="phone000">{{comment.phone || '未知型号'}}</div>
                 </div>
             </div>
             <div class="content">
@@ -65,10 +65,20 @@ export default {
             }
             .right{
                 color:#444;
+                .phone000{
+                    display: inline-block;
+                    max-width: 200px;
+                    line-height:100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+			        white-space:nowrap;
+                    vertical-align: middle;
+                }
             }
         }
         .content{
             margin: 10px 0;
+            width: 335px;
         }
     }
 }
