@@ -30,6 +30,7 @@
           start.setMonth(0)
           start.setDate(1)
           let offset = new Date().getTime() - start.getTime()
+          console.log(offset)
           return parseInt(offset / 1000 / 60 / 60 / 24) + 1
         },
         percent () {
